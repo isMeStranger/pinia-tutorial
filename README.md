@@ -11,7 +11,7 @@ export const useTasksStore = defineStore("tasks", () => {
   // our state, we want to keep track of this
   const tasks = ref(["item1", "item2", "item3"]);
 
-  return { tasks }; // <<<<<<<<< return state
+  return { tasks }; //                              <<<<<<<<< return state
 });
 
 ```
@@ -20,11 +20,11 @@ export const useTasksStore = defineStore("tasks", () => {
 ```
 <script setup lang="ts">
 // import { RouterLink, RouterView } from 'vue-router'
-import { useTasksStore } from './store/TasksStore'; // <<<<<< import store
-import { storeToRefs } from 'pinia';                <<<<<< keep references 
+import { useTasksStore } from './store/TasksStore'; //          <<<<<< import store
+import { storeToRefs } from 'pinia';                            <<<<<< keep references 
 
-const tasksStore = useTasksStore();                 <<<<<< use store
-const { tasks } = storeToRefs(tasksStore);          <<<<<< get state
+const tasksStore = useTasksStore();                             <<<<<< use store
+const { tasks } = storeToRefs(tasksStore);                      <<<<<< get state
 </script>
 
 <template>
@@ -34,7 +34,8 @@ const { tasks } = storeToRefs(tasksStore);          <<<<<< get state
 
   <div class="tasks-list">
     <ul>
-      <li class="task-item" v-for="task in tasks">{{ task }}</li>  <<<<< use state
+            vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv <<<< use state
+      <li class="task-item" v-for="task in tasks">{{ task }}</li>          
     </ul>
   </div>
 </template>
