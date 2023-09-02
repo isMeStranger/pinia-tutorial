@@ -1,40 +1,32 @@
-# pinia-tutorial
+### Adding Pinia to the project:
+do this by installing pinia using ```npm install pinia```
 
-This template should help get you started developing with Vue 3 in Vite.
+### Registering Pinia as a Store
+do this by adding the following line ```app.use(createPinia())``` 
+to your main.js/main.ts 
 
-## Recommended IDE Setup
+final code: 
+```
+import './assets/main.css'
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
 
-## Type Support for `.vue` Imports in TS
+const app = createApp(App)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+app.use(router)
+app.use(createPinia())
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+app.mount('#app')
 ```
 
-### Compile and Hot-Reload for Development
+### Creating a store
+define a new `store` folder inside your `src` folder and add your stores in there
 
-```sh
-npm run dev
-```
+to create a new store, create a new ts/js file and import `defineStore` function from pinia
 
-### Type-Check, Compile and Minify for Production
+then, inside there you start by defining your store
 
-```sh
-npm run build
-```
+we defined only the state so far, check `src/store/TasksStore.ts` for an example

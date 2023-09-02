@@ -3,7 +3,17 @@
 </script>
 
 <template>
-  
+  <header>
+    <h1> Pinia Tasks </h1>
+  </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+header{
+  background-color: #434343;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
