@@ -14,10 +14,9 @@ const props = defineProps({
     </li>
 </template>
 
-<style lang="sass" scoped>
-.task-item{
-    display:flex;
-    align-items:center,
-    
+<style scoped>
+.task-item {
+    display: flex;
+    align-items: center;
 }
 </style>
