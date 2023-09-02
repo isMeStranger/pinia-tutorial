@@ -2,6 +2,7 @@
 // import { RouterLink, RouterView } from 'vue-router'
 import { useTasksStore } from './store/TasksStore';
 import { storeToRefs } from 'pinia';
+import TaskItem from './components/TaskItem.vue';
 
 const tasksStore = useTasksStore();
 const { tasks } = storeToRefs(tasksStore);
@@ -14,7 +15,7 @@ const { tasks } = storeToRefs(tasksStore);
 
   <div class="tasks-list">
     <ul>
-      <li class="task-item" v-for="task in tasks">{{ task }}</li>
+      <TaskItem class="task-item" v-for="task in tasks" :task="task"></TaskItem>
     </ul>
   </div>
 </template>
